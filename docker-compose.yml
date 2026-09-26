@@ -1,0 +1,11 @@
+services:
+  sellerkg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sellerkg
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    ports:
+      - "4050:4050"

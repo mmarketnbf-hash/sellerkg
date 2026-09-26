@@ -1,0 +1,21 @@
+{
+  "name": "sellerkg",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @sellerkg/api\" \"npm run dev -w @sellerkg/web\"",
+    "dev:api": "npm run dev -w @sellerkg/api",
+    "dev:web": "npm run dev -w @sellerkg/web",
+    "build": "npm run build -w @sellerkg/api && npm run build -w @sellerkg/web",
+    "test": "npm run test -w @sellerkg/api",
+    "start": "npm run start -w @sellerkg/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
